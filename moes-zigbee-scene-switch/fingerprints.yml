@@ -1,0 +1,6 @@
+zigbeeManufacturer:
+  - id: "MOES/ZT-SY-EU4S-BK-C-MS"
+    deviceLabel: MOES 4 Button Scene Switch
+    manufacturer: _TZ3000_wkai4ga5
+    model: TS0044
+    deviceProfileName: twelve-scene-controller

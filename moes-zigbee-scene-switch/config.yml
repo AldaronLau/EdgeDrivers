@@ -1,0 +1,5 @@
+name: 'MOES Zigbee 4 Button Scene Switch'
+packageKey: 'com.aldaronlau.moes-scene-switch'
+permissions:
+  zigbee: {}
+  discovery: {}
