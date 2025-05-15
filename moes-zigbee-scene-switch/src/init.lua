@@ -3,7 +3,7 @@ local capabilities = require "st.capabilities"
 local ZigbeeDriver = require "st.zigbee"
 local defaults = require "st.zigbee.defaults"
 
-local on_off_attr_handler = function(driver, device, zb_msg)
+local button_cmd_handler = function(driver, device, zb_msg)
   local additional_fields = {
     state_change = true
   }
@@ -60,7 +60,7 @@ local zigbee_scene_controller_driver_template = {
   zigbee_handlers = {
     cluster = {
       [OnOff.ID] = {
-        [0xFD] = on_off_attr_handler
+        [0xFD] = button_cmd_handler
       }
     }
   },
