@@ -48,6 +48,11 @@ local endpoint_to_component_map = function(device, endpoint)
 end
 
 local device_init = function(driver, device, event)
+  for comp_id, comp in pairs(device.profile.components) do
+    if device:get_latest_state(comp_id, capabilities.button.ID, capabilities.button.supportedButtonValues.ID) == nil then
+      device:emit_component_event(comp, capabilities.button.supportedButtonValues({"pushed","held","double"}, {visibility = { displayed = false }}))
+    end
+  end
   device:set_component_to_endpoint_fn(component_to_endpoint_map)
   device:set_endpoint_to_component_fn(endpoint_to_component_map)
 end
